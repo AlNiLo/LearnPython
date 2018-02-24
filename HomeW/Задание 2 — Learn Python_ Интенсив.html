@@ -1,0 +1,298 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Learn Python: Интенсив</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href="highlight.js/default.css">
+    <style>
+        #cover {
+            background-color: white
+        }
+        #cover h1 {
+            text-align: center;
+            font-size: 60px;
+            line-height: 60px;
+        }
+        #cover h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #cover p {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .slide .shout {
+            position: absolute;
+            top: 50%;
+            left: 20;
+            width: 80%;
+            font-size: 60px;
+            text-align: center;
+            line-height: 1;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .shout code {
+            background-color: white;
+        }
+        .inactive{
+            color: #CCC;
+        }
+        pre {
+            font-size: 18px;
+        }
+        pre.small {
+            font-size: 15px;
+        }
+        pre.big {
+            font-size: 25px;
+        }
+        pre code {
+            font-size: inherit;
+        }
+
+        .slide:after {
+            display: none;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .dbscheme img {
+            width: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="full" data-plugins="notes">
+    <script src="highlight.js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({languages: ['python', 'sql', 'bash']})
+        hljs.initHighlightingOnLoad();
+        console.clear = undefined;  // иначе notes работают неправильно.
+    </script>
+
+    <header class="caption">
+        <h2>Learn Python</h2>
+        <h1>Интенсив</h1>
+        <p>Михаил Корнеев</p>
+    </header>
+
+    <section class="slide" id="cover"><div>
+        <h2>Learn Python</h2>
+        <h1>Функции</h1>
+        <p>Михаил Корнеев</p>
+    </div></section>
+
+
+    <section class="slide"><div>
+        <h2>Что такое функция?</h2>
+        <ol>
+            <li>Часть кода, которому мы даём имя</li>
+            <li>Функцию можно написать один раз и вызывать из разных мест программы</li>
+            <li>Функции помогают структурировать код, разбив его на отдельные действия</li>
+            <li>Делают код более читабельным и упрощают поиск ошибок</li>
+        </ol>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Представим программу как конвеер</h2>
+        <p style="margin-top: -40px;"><center><img src="img/func_1.png" height="450px" /></center></p>
+        
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Предметы на ленте - переменные</h2>
+        <p style="margin-top: -40px;"><center><img src="img/func_2.png" height="450px" /></center></p>
+        
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Работу выполняют функции</h2>
+        <p style="margin-top: -40px;"><center><img src="img/func_3.png" height="450px" /></center></p>
+        
+    </div></section>
+
+    <section class="slide"><div>
+       <h2>Что нужно знать о функциях</h2>
+        <ul>
+            <li>Создаем функцию при помощи ключевого слова <code>def</code>, после которого пишем имя функции</li>
+            <li>Узнать функцию просто - после названия функции идут круглые скобки</li>
+            <li>В название функции используйте маленькие латинские буквы, цифры, подчеркивания: <code>get_user_name()</code> или <code>open_workbook()</code></li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Доступно много функций "из коробки"</h2>
+        <p>Функция <code>print()</code> распечатывает то, что передали ей в скобочках.</p>
+        <pre class="python"><code>>>> print('Привет!')
+Привет!</code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Доступно много функций "из коробки"</h2>
+        <p>Функция <code>len()</code> возвращает длинну того, что передали ей в скобочках.</p>
+        <pre class="python"><code>>>> len('Привет!')
+7</code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Доступно много функций "из коробки"</h2>
+        <p>Функции можно объединять:</p>
+        <pre class="python"><code>>>> print(len('Привет!'))
+7
+        </code></pre>
+
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Разберемся, зачем нужны функции</h2>
+        <p>Создайте в Sublime файл test_func.py</p>
+        <pre class="python"><code>price = 100
+vat_rate = 18
+
+vat = price / 100 * vat_rate
+
+print(vat)
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Усложняем</h2>
+        <pre class="python"><code>price = 100
+vat_rate = 18
+
+vat = price / 100 * vat_rate
+
+price_no_vat = price - vat
+print(price_no_vat)
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Можно сказать, что задача решена. Но в реальной жизни такое решение не подходит. Почему?</h2>
+    </div></section>
+
+
+    <section class="slide"><div>
+        <h2>Создадим функцию</h2>
+        <pre class="python"><code>def get_vat(price, vat_rate):
+    vat = price / 100 * vat_rate
+    price_no_vat = price - vat
+    print(price_no_vat)
+
+price1 = 100
+vat_rate1 = 18
+get_vat(price1, vat_rate1)
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Теперь попробуем использовать функцию для разных задач</h2>
+        <pre class="python"><code>price1 = 100
+vat_rate1 = 18
+get_vat(price1, vat_rate1)
+
+price2 = 500
+vat_rate1 = 10
+get_vat(price2, vat_rate2)
+
+get_vat(50, '5')
+get_vat(-100, 18)
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Как нам починить функцию?</h2>
+    </div></section>
+
+    <section class="slide"><div>
+       <h2>Аргументы</h2>
+       <ul>
+            <li>Функция &mdash; это черный ящик в который мы можем что-то положить, а на выходе получить результат.</li>
+            <li>Аргументы &mdash; данные, с которыми мы хотим работать внутри функции.</li>
+            <li>Названия аргументов мы придумываем сами, ограничения на названия &mdash; как у обычных переменных.</li>
+        </ul>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Позиционные аргументы</h2>
+        <p>Проверочное слово "первый аргумент", "второй аргумент".</p>
+        <pre class="python"><code>def get_summ(one, two):
+    return one + two
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Позиционные аргументы</h2>
+        <pre class="python"><code>get_summ(2, 2)
+???
+
+get_summ('Hello', 'world!')
+???
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Именованные аргументы</h2>
+        <p>Задаем название и значение аргумента.</p>
+        <pre class="python"><code>def get_summ(one, two, delimeter=' '):
+    return str(one) + str(delimeter) + str(two)
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Проверим</h2>
+        <pre class="python"><code>get_summ('Hello', 'world!', delimeter='&')
+???
+
+get_summ('Hello', 'world!', ' + ')
+???
+
+get_summ('Hello', 'world!')
+???
+        </code></pre>
+    </div></section>
+
+
+    <section class="slide"><div>
+        <h2>Внутри функции доступны переменные, объявленные уровнем выше</h2>
+        <pre class="python"><code>test = 1
+def myfunc():
+    print(test)
+
+myfunc()
+        </code></pre>
+    </div></section>
+
+    <section class="slide"><div>
+        <h2>Задание 1</h2>
+        <ol class="small" style="font-size: 20px;">
+            <li>Измените функцию <code>get_summ()</code> чтобы результат выводился заглавными буквами использйте метод <code>'строка'.upper()</code></li>
+        </ol>
+    </div></section>
+
+
+    <section class="slide"><div>
+        <h2>Задание 2</h2>
+        <ol class="small" style="font-size: 20px;">
+            <li>Создайте в Sublime файл answers.py</li>
+            <li>Создайте функцию <mark>get_answer()</mark>, которая принимает<br /> 
+                аргумент <mark>question</mark> (строку, полученную от пользователя, например <code>"привет"</code>)<br />
+                 и словарь <mark>answers</mark> описывающий типичный диалог:<br />
+            <code>{"привет": "И тебе привет!", "как дела": "Лучше всех", "пока": "Увидимся"}</code></li>
+            <li>Сделайте, чтобы функция возвращала (return) значение из словаря <br />
+            <mark>answers</mark> по ключу <mark>question</mark></li>
+            <li>Приведите строку, передаваемую в функцию к нижнему регистру<br />
+            (используйте тетод "строка".lower())</li>
+        </ol>
+    </div></section>
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Learn Python: Интенсив</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href="highlight.js/default.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="full" data-plugins="notes">
+    <script src="highlight.js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({languages: ['python', 'sql', 'bash']})
+        hljs.initHighlightingOnLoad();
+        console.clear = undefined;  // иначе notes работают неправильно.
+    </script>
+
+    <header class="caption">
+        <h2>Learn Python</h2>
+        <h1>Интенсив</h1>
+        <p>Илья Лебедев</p>
+    </header>
+
+    <section class="slide" id="cover"><div>
+        <h2>Learn Python</h2>
+        <h1>Условный оператор</h1>
+        <p>Илья Лебедев</p>
+    </div></section>
+
+
+	<section class="slide"><div>
+		<h2>Условный оператор</h2>
+        Выполняет разный код в зависимости от данных.
+	</div></section>
+	<section class="slide"><div>
+		<h2>Условный оператор</h2>
+		<pre class="big python">
+			<code>if age < 18:</code>
+			<code>    print('Никаких тебе сигарет. Ишь чего удумал!')</code>
+			<code>else:</code>
+			<code>    print('Вам синий или красный?')</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Условный оператор</h2>
+		<pre class="big python">
+			<code>if not is_user_banned:</code>
+			<code>    ban_user(user)</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Условный оператор</h2>
+		<pre class="big python">
+			<code>if team == 'mystic':</code>
+			<code>    print('Hi, blue team')</code>
+			<code>elif team == 'instinct':</code>
+			<code>    print('Hi, yellow team')</code>
+			<code>elif team == 'valor':</code>
+			<code>    print('Hi, red team')</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Условный оператор</h2>
+		<pre class="big python">
+			<code>if team == 'mystic':</code>
+			<code>    if user_level >= 5:</code>
+			<code>        print('Welcome to the gym')</code>
+			<code>    else:</code>
+            <code>        print('Get more exp')</code>
+		</pre>
+	</div></section>
+
+    <section class="slide"><div>
+		<h2>Условный оператор</h2>
+        <ul>
+            <li class="next">Нужен, если нужно что-то сделать при каком-то условии.</li>
+            <li class="next">Если условие истинно, то выполняется тело функции.</li>
+            <li class="next">Если условие ложно, выполняется ветка <code>else</code> (если она есть).</li>
+            <li class="next">Можно последовательно проводить много проверок с помощью <code>elif</code>.</li>
+            <li class="next">Можно вкладывать один условный оператор в тело другого.</li>
+        </ul>
+    </div></section>
+	<section class="slide centered"><div>
+        <img src="img/cat5.jpg" height="450px"/>
+	</div></section>
+
+
+
+	<section class="slide shout"><div>
+		<h2>Практика</h2>
+    </div></section>
+	<section class="slide"><div>
+		<h2>Возраст</h2>
+        <ul>
+            <li>Попросить пользователя ввести возраст.</li>
+            <li>По возрасту определить, чем он должен заниматься: учиться в детском саду, школе, ВУЗе или работать.</li>
+            <li>Вывести занятие на экран.</li>
+        </ul>
+    </div></section>
+	<section class="slide"><div>
+		<h2>Сравнение строк</h2>
+        <ul>
+            <li>Написать функцию, которая принимает на вход две строки.</li>
+            <li>Если строки одинаковые, возвращает 1.</li>
+            <li>Если строки разные и первая длиннее, возвращает 2.</li>
+            <li>Если строки разные и вторая строка <code>'learn'</code>, возвращает 3.</li>
+        </ul>
+    </div></section>
+
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>
